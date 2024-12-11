@@ -4,166 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is a fanmade page of the Deathcore band Despised Icon. Information about the band, their discography, upcoming tours, and more.">
+    <meta name="description" content="Fanmade page for Deathcore band Despised Icon with information on the band, discography, and more.">
     <title>Despised Icon</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #1c1c1c;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            color: #ff9800;
-        }
-
-        nav {
-            margin: 10px 0;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #ff9800;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .section-title {
-            font-size: 24px;
-            border-bottom: 2px solid #ff9800;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-        }
-
-        img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .band-members {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .band-member {
-            text-align: center;
-            background-color: #1c1c1c;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 10px;
-        }
-
-        .band-member img {
-            border-radius: 50%;
-        }
-
-        .table-section {
-            margin-top: 40px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid #ff9800;
-            text-align: left;
-        }
-
-        th {
-            background-color: #ff9800;
-        }
-
-        td {
-            background-color: #1c1c1c;
-        }
-
-        .form-section {
-            margin-top: 40px;
-        }
-
-        input, textarea, button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-
-        input, textarea {
-            background-color: #333;
-            color: #fff;
-        }
-
-        button {
-            background-color: #ff9800;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #e09100;
-        }
-
-        .message {
-            margin-top: 10px;
-            color: #ff9800;
-        }
-
-        footer {
-            background-color: #1c1c1c;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #ff9800;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #fff;
-        }
+        body { font-family: Arial, sans-serif; background: #121212; color: #e0e0e0; margin: 0; }
+        header, footer { background: #1c1c1c; text-align: center; padding: 20px; }
+        header h1, footer a { color: #ff9800; }
+        nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; }
+        nav a:hover, footer a:hover { color: #ff9800; }
+        .content { padding: 20px; }
+        .section-title { font-size: 24px; border-bottom: 2px solid #ff9800; margin-bottom: 20px; }
+        img { width: 100%; max-width: 300px; margin: 10px 0; border-radius: 10px; }
+        .band-members { display: flex; justify-content: space-around; margin-bottom: 20px; }
+        .band-member { text-align: center; background: #1c1c1c; padding: 15px; border-radius: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { padding: 12px; border: 1px solid #ff9800; text-align: left; background: #1c1c1c; }
+        th { background: #ff9800; }
+        input, textarea, button { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 5px; }
+        input, textarea { background: #333; color: #fff; }
+        button { background: #ff9800; color: #fff; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #e09100; }
+        .message { color: #ff9800; }
     </style>
-
     <script>
-        function submitForm(event) {
-            event.preventDefault();
+        function submitForm(e) {
+            e.preventDefault();
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-
-            if (name && email && message) {
-                document.getElementById('formMessage').innerHTML = 'Thank you, ' + name + '! Your message has been sent.';
-                document.getElementById('contactForm').reset();
-            } else {
-                document.getElementById('formMessage').innerHTML = 'Please fill in all fields.';
-            }
+            document.getElementById('formMessage').innerText = name && email && message
+                ? `Thank you, ${name}! Your message has been sent.`
+                : 'Please fill in all fields.';
+            if (name && email && message) document.getElementById('contactForm').reset();
         }
     </script>
 </head>
@@ -176,91 +48,64 @@
             <a href="#members">Band Members</a>
             <a href="#discography">Discography</a>
             <a href="#tours">Tour Dates</a>
-            <a href="#contact">Order their merch</a>
+            <a href="#contact">Merch</a>
         </nav>
     </header>
 
     <div class="content">
-        <!-- About Section -->
         <section id="about">
             <h2 class="section-title">About</h2>
-            <p>Despised Icon is a Canadian deathcore band from Montreal, Quebec. Formed in 2002, the band is noted for the talent of its drummer, Alex Pelletier, who makes frequent use of the blasting technique, as well as for its dual lead vocalists; Alex Erian and Steve Marois.</p>
-            <img src="C:\Users\samue\Downloads\di-promo_22.jpg" alt="Band Image">
+            <p>Despised Icon is a Canadian deathcore band known for their dual lead vocalists and drummer Alex Pelletier's blasting technique.</p>
+            <img src="https://www.despisedicon.com/images/di-promo_22.jpg" alt="Promotional image of Despised Icon">
         </section>
 
-        <!-- Band Members Section -->
         <section id="members">
             <h2 class="section-title">Band Members</h2>
             <div class="band-members">
                 <div class="band-member">
-                    <img src="C:\Users\samue\Downloads\VOcals.jpg" alt="John Doe">
+                    <img src="https://i.discogs.com/Ebly78TZwKCCQ75jfeRoBz56UN-gnqvbpOKzx9xUS44/rs:fit/g:sm/q:90/h:500/w:557/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTg5NTMx/MC0xNzE0NTMxNTIy/LTUxNDQuanBlZw.jpeg" alt="Steve Marois, lead vocalist">
                     <h3>Steve Marois</h3>
-                    <p><strong>Lead Vocals</strong></p>
+                    <p>Lead Vocals</p>
                 </div>
                 <div class="band-member">
-                    <img src="C:\Users\samue\Downloads\DI guitars.jpg" alt="Jane Smith">
+                    <img src="https://images.equipboard.com/uploads/user/image/42579/big_eric-jarrin.jpg?v=1731875310" alt="Eric Jarrin, lead guitarist">
                     <h3>Eric Jarrin</h3>
-                    <p><strong>Lead Guitar</strong></p>
+                    <p>Lead Guitar</p>
                 </div>
                 <div class="band-member">
-                    <img src="C:\Users\samue\Downloads\Drummer.jpg" alt="Mike Johnson">
+                    <img src="https://sickdrummermagazine.com/wp-content/uploads/2010/04/alexgrind1.jpg" alt="Alex Pelletier, drummer">
                     <h3>Alex Pelletier</h3>
-                    <p><strong>Drums</strong></p>
+                    <p>Drums</p>
                 </div>
             </div>
         </section>
 
-        <!-- Discography Section -->
         <section id="discography">
             <h2 class="section-title">Discography</h2>
-            <p>Listen to Despised Icon's albums on <a href="https://open.spotify.com/artist/3MjNMjqBpaQ0P8ebfbZjYn?si=251360ee87834318" target="_blank">Spotify</a>.</p>
-            <img src="C:\Users\samue\Downloads\Beast.jpg" alt="Album Cover">
+            <p>Listen on <a href="https://open.spotify.com/artist/3MjNMjqBpaQ0P8ebfbZjYn" target="_blank">Spotify</a>.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/en/9/94/Beast_%28Despised_Icon_album%29.jpg" alt="Album cover of Beast">
         </section>
 
-        <!-- Tour Dates Table Section -->
-        <section id="tours" class="table-section">
+        <section id="tours">
             <h2 class="section-title">Upcoming Tour Dates</h2>
             <table>
                 <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>City</th>
-                        <th>Venue</th>
-                    </tr>
+                    <tr><th>Date</th><th>City</th><th>Venue</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Nov 20, 2024</td>
-                        <td>New York, NY</td>
-                        <td>Rock Stadium</td>
-                    </tr>
-                    <tr>
-                        <td>Dec 5, 2024</td>
-                        <td>Los Angeles, CA</td>
-                        <td>Thunder Arena</td>
-                    </tr>
-                    <tr>
-                        <td>Jan 10, 2025</td>
-                        <td>Chicago, IL</td>
-                        <td>Electric Hall</td>
-                    </tr>
+                    <tr><td>Nov 20, 2024</td><td>New York, NY</td><td>Rock Stadium</td></tr>
+                    <tr><td>Dec 5, 2024</td><td>Los Angeles, CA</td><td>Thunder Arena</td></tr>
+                    <tr><td>Jan 10, 2025</td><td>Chicago, IL</td><td>Electric Hall</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <!-- Contact Form Section -->
-        <section id="contact" class="form-section">
-            <h2 class="section-title">Contact Us for merch</h2>
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
             <form id="contactForm" onsubmit="submitForm(event)">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Add your card number:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <textarea id="message" name="message" placeholder="Message" rows="4" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
             <div id="formMessage" class="message"></div>
@@ -268,12 +113,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Despied Icon. All rights reserved.</p>
-        <p>Follow Despised Icon on 
-            <a href="#" target="_blank">Facebook</a> | 
-            <a href="#" target="_blank">Instagram</a> | 
-            <a href="#" target="_blank">Twitter</a>
-        </p>
+        <p>&copy; 2024 Despised Icon. Follow us on <a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Twitter</a>.</p>
     </footer>
 </body>
 
