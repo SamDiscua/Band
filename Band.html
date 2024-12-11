@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a fanmade page of the Deathcore band Despised Icon. Information about the band, their discography, upcoming tours, and more.">
+    <title>Despised Icon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #ff9800;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            border-bottom: 2px solid #ff9800;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .band-members {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .band-member {
+            text-align: center;
+            background-color: #1c1c1c;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .band-member img {
+            border-radius: 50%;
+        }
+
+        .table-section {
+            margin-top: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ff9800;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ff9800;
+        }
+
+        td {
+            background-color: #1c1c1c;
+        }
+
+        .form-section {
+            margin-top: 40px;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input, textarea {
+            background-color: #333;
+            color: #fff;
+        }
+
+        button {
+            background-color: #ff9800;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e09100;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: #ff9800;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+    </style>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                document.getElementById('formMessage').innerHTML = 'Thank you, ' + name + '! Your message has been sent.';
+                document.getElementById('contactForm').reset();
+            } else {
+                document.getElementById('formMessage').innerHTML = 'Please fill in all fields.';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Despised Icon</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#members">Band Members</a>
+            <a href="#discography">Discography</a>
+            <a href="#tours">Tour Dates</a>
+            <a href="#contact">Order their merch</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About</h2>
+            <p>Despised Icon is a Canadian deathcore band from Montreal, Quebec. Formed in 2002, the band is noted for the talent of its drummer, Alex Pelletier, who makes frequent use of the blasting technique, as well as for its dual lead vocalists; Alex Erian and Steve Marois.</p>
+            <img src="C:\Users\samue\Downloads\di-promo_22.jpg" alt="Band Image">
+        </section>
+
+        <!-- Band Members Section -->
+        <section id="members">
+            <h2 class="section-title">Band Members</h2>
+            <div class="band-members">
+                <div class="band-member">
+                    <img src="C:\Users\samue\Downloads\VOcals.jpg" alt="John Doe">
+                    <h3>Steve Marois</h3>
+                    <p><strong>Lead Vocals</strong></p>
+                </div>
+                <div class="band-member">
+                    <img src="C:\Users\samue\Downloads\DI guitars.jpg" alt="Jane Smith">
+                    <h3>Eric Jarrin</h3>
+                    <p><strong>Lead Guitar</strong></p>
+                </div>
+                <div class="band-member">
+                    <img src="C:\Users\samue\Downloads\Drummer.jpg" alt="Mike Johnson">
+                    <h3>Alex Pelletier</h3>
+                    <p><strong>Drums</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discography Section -->
+        <section id="discography">
+            <h2 class="section-title">Discography</h2>
+            <p>Listen to Despised Icon's albums on <a href="https://open.spotify.com/artist/3MjNMjqBpaQ0P8ebfbZjYn?si=251360ee87834318" target="_blank">Spotify</a>.</p>
+            <img src="C:\Users\samue\Downloads\Beast.jpg" alt="Album Cover">
+        </section>
+
+        <!-- Tour Dates Table Section -->
+        <section id="tours" class="table-section">
+            <h2 class="section-title">Upcoming Tour Dates</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>City</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nov 20, 2024</td>
+                        <td>New York, NY</td>
+                        <td>Rock Stadium</td>
+                    </tr>
+                    <tr>
+                        <td>Dec 5, 2024</td>
+                        <td>Los Angeles, CA</td>
+                        <td>Thunder Arena</td>
+                    </tr>
+                    <tr>
+                        <td>Jan 10, 2025</td>
+                        <td>Chicago, IL</td>
+                        <td>Electric Hall</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="form-section">
+            <h2 class="section-title">Contact Us for merch</h2>
+            <form id="contactForm" onsubmit="submitForm(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Add your card number:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="formMessage" class="message"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Despied Icon. All rights reserved.</p>
+        <p>Follow Despised Icon on 
+            <a href="#" target="_blank">Facebook</a> | 
+            <a href="#" target="_blank">Instagram</a> | 
+            <a href="#" target="_blank">Twitter</a>
+        </p>
+    </footer>
+</body>
+
+</html>
